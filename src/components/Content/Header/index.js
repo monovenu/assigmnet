@@ -2,7 +2,7 @@ import { debounce } from 'lodash';
 import './index.css';
 
 
-const Header = ({currentMenu, getList}) => {
+const Header = ({currentMenu, getList,  openModal}) => {
     const search = debounce((e) => {
       getList(e.target.value.trim())
     }, 200)
@@ -16,7 +16,7 @@ const Header = ({currentMenu, getList}) => {
                 </div>
                 <div className='createBtn-wrap'>
                   <i className="iconfont icon-a-ESMiconset_New" />
-                  <button className='createBtn'>Create SDK</button>
+                  <button onClick={openModal} className='createBtn'>Create SDK</button>
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@ import Mock from 'better-mock'
 import { param2Obj } from '@/utils'
 
 const List = []
-const count = 12
+const count = 100
 
 for (let i = 0; i < count; i++) {
   List.push(Mock.mock({

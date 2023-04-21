@@ -9,7 +9,7 @@ const LeftBar = ({changeCurrentMenu}) => {
             {
                 MenuList.map(item => {
                     return  <li onClick={() => changeCurrentMenu(item)} key={item} className='menuItem'>
-                        <i className="iconfont icon-ICON2_API"></i>
+                        <i className="iconfont icon-ICON2_API" />
                         {item}
                     </li>
 

@@ -1,0 +1,45 @@
+.content-create {
+    padding: 14px;
+
+    .ant-form {
+        label {
+            font-weight: 700;
+        }
+
+        .ant-input {
+            height: 30px;
+            border-radius: 2px;
+        }
+        .ant-form-item-label {
+            line-height: 30px;
+            padding-bottom: 0;
+        }
+        .ant-form-item {
+            margin-bottom: 10px;
+        }
+    }
+    .btn-area {
+        display: flex;
+        justify-content: flex-end;
+        padding: 5px 0 2px;
+        .btn {
+            font-family: Segoe UI,Microsoft Yahei,微软雅黑,sans-serif;
+            border:none;
+            height: 30px;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        .cancel {
+            color:var(--blue);
+            background:none;
+            margin-right: 10px;
+        }
+        .submit {
+            border-radius: 2px;
+            padding: 0 10px;
+            color: #fff;
+            background-color: var(--blue);
+        }
+    }
+
+}

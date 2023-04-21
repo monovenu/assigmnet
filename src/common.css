@@ -167,3 +167,11 @@ select {
 html {
     font-family: 'Segoe UI', 'Microsoft Yahei', '微软雅黑', Helvetica, 'Hiragino Sans GB', Arial, sans-serif;
 }
+
+:root {
+    --blue: #3561F4;
+    /* --white: #ffffff; */
+}
+.iconfont {
+    cursor: pointer;
+}

@@ -1,7 +1,52 @@
 .content {
     height: 100vh;
     padding: 0 14px;
-    .table {
+
+    .content-table {
         width: calc(100vw - 260px);
+
+        .ant-table-thead {
+            height: 38px;
+
+            .ant-table-cell {
+                background-color: #fefefe;
+                border-bottom: 2px solid #ddddde;
+            }
+        }
+
+        .ant-table-cell {
+            &::before {
+                display: none;
+            }
+
+            border-bottom: 1px solid #e9eaea;
+        }
+
+        .ant-table-tbody {
+            .ant-table-cell {
+                &.sdk {
+                    cursor: pointer;
+                    color: var(--blue);
+                }
+            }
+        }
+
+        .ant-table-row {
+            &:nth-child(even) {
+                .ant-table-cell {
+                    background-color: #f7f8f9;
+
+                }
+
+            }
+        }
+        .icon-a-ESMiconset_Edit, .icon-a-ESMiconset_Delete {
+            font-size: 20px;
+        }
+        .icon-a-ESMiconset_Edit {
+            margin-right: 8px;
+        }
     }
+
+
 }

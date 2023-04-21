@@ -25,12 +25,12 @@
                 vertical-align: middle;
             }
             &:hover {
-                color: #3561F4;
+                color: var(--blue);
                 &::before {
-                    background:#3561F4;
+                    background:var(--blue);
                 }
                 i {
-                    color: #3561F4;
+                    color: var(--blue);
                 }
             }
         }

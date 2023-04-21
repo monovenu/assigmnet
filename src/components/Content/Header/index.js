@@ -1,15 +1,18 @@
+import { debounce } from 'lodash';
 import './index.css';
 
 
-const Header = ({currentMenu}) => {
-    
+const Header = ({currentMenu, getList}) => {
+    const search = debounce((e) => {
+      getList(e.target.value.trim())
+    }, 200)
 
     return <div className='content-header'>
             <div className='title'>{currentMenu}</div>
             <div className='input-area'>
                 <div className='input-wrap'>
                   <i className="iconfont icon-a-ESMiconset_Search" />
-                  <input className='input' placeholder='Search client name, board name, tags, requestor'/>
+                  <input className='input' onInput={search} placeholder='Search client name, board name, tags, requestor'/>
                 </div>
                 <div className='createBtn-wrap'>
                   <i className="iconfont icon-a-ESMiconset_New" />

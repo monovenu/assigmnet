@@ -5,23 +5,28 @@ import Header from './Header';
 import Create from './Create';
 import Modal from '@/components/Modal';
 import '@/mock';
+import {warpTag} from '@/utils'
 import './index.css';
 
 
 const Content = ({ currentMenu }) => {
   const [list, setList] = useState([])
-  const [showModal, setShowModal] = useState(true)
+  const [showModal, setShowModal] = useState(false)
 
   useEffect(() => {
+    getList()
+  }, [])
+
+  const getList = (key = '') => {
     axios.get('/subject/list', {
-      params: { type: '资产' }
+      params: { key }
     }).then(function (response) {
         setList(response.data?.data?.items)
         console.log(response.data.data.items);
     }).catch(function (error) {
         console.log(error);
     })
-  }, [])
+  }
 
   const openModal = () => {
     setShowModal(true)
@@ -30,17 +35,17 @@ const Content = ({ currentMenu }) => {
     setShowModal(false)
   }
   const createRecord = (data) => {
-    axios.post('/subject/addData', {
-      params: { type: '资产' }
-    }).then(function (response) {
-        setList(response.data?.data?.items)
-        console.log(response.data.data.items);
+    return axios.post('/subject/addData', data).then(function (response) {
+        getList()
     }).catch(function (error) {
         console.log(error);
+        throw error
     })
   }
   const columns = [
-    { title: 'Client name', dataIndex: 'Client name', key: 'Client name', width: '18%' },
+    { title: 'Client name', dataIndex: 'Client name', key: 'Client name', width: '18%', render:(text) => {
+      return <div dangerouslySetInnerHTML={{__html:warpTag(text, 'e', 'span')}}></div>
+    } },
     { title: 'Board name', dataIndex: 'Board name', key: 'Board name', width: '18%' },
     { title: 'Tags', dataIndex: 'Tags', key: 'Tags', width: '18%' },
     { title: 'Requestor', dataIndex: 'Requestor', key: 'Requestor', width: '18%' },
@@ -53,15 +58,15 @@ const Content = ({ currentMenu }) => {
     {
       title: 'Actions', dataIndex: '', key: 'Actions', width: '10%', render: (text, record, index) => (
         <span>
-          <i title="edit" className="iconfont icon-a-ESMiconset_Edit" />
-          <i title="delete" onClick={openModal} className="iconfont icon-a-ESMiconset_Delete" />
+          <i title="edit" onClick={openModal} className="iconfont icon-a-ESMiconset_Edit" />
+          <i title="delete" className="iconfont icon-a-ESMiconset_Delete" />
         </span>
       )
     },
   ];
 
   return <div className='content'>
-    <Header currentMenu={currentMenu} />
+    <Header currentMenu={currentMenu} getList={getList}/>
     <Table columns={columns}
       rowKey={record => record.id}
       dataSource={list}

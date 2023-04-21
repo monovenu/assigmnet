@@ -2,8 +2,7 @@ import Mock from 'better-mock'
 import { param2Obj } from '@/utils'
 
 const List = []
-const count = 2
-
+const count = 12
 
 for (let i = 0; i < count; i++) {
   List.push(Mock.mock({
@@ -15,23 +14,36 @@ for (let i = 0; i < count; i++) {
     'SDK script': '@url()',
   }))
 }
-
+const match = (item, sourceKey, key) => {
+  if(item[sourceKey].toLowerCase().indexOf(key.toLowerCase()) >= 0) {
+    return true
+  }
+}
 export default {
   getList: config => {
-    const { page = 1, limit = 20 } = param2Obj(config.url)
-    const mockList = List.slice(0)
-    const pageList = mockList.filter((item, index) => index < limit * page && index >= limit * (page - 1))
+    const { page = 1, limit = 20, key } = param2Obj(config.url)
+    console.log(key)
+    const tempList = List.filter((item) => {
+      if(match(item, 'Client name', key) || match(item, 'Board name', key) ||
+      match(item, 'Tags', key) || match(item, 'Requestor', key)) {
+        return true
+      }
+      return false
+     
+    })
+    const pageList = tempList.filter((item, index) => index < limit * page && index >= limit * (page - 1))
     return {
       code: 20000,
       data: {
-        total: mockList.length,
+        total: tempList.length,
         items: pageList
       }
     }
   },
   addData: config => {
+    console.log(config.body)
     const data = JSON.parse(config.body)
-    List.unshift(data)
+    List.unshift({...data, id:List.length})
     return {
       code: 20000
     }

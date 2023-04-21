@@ -8,7 +8,10 @@ const Create = ({ hide, createRecord }) => {
 
   const handleSubmit = () => {
     form.validateFields().then((value)=> {
-      createRecord(value)
+      console.log(value)
+      createRecord(value).then(() => {
+        hide()
+      })
     }).catch(err => {
       console.log(err)
     })
@@ -31,7 +34,7 @@ const Create = ({ hide, createRecord }) => {
         <Input />
       </FormItem>
       <FormItem
-        name="Board"
+        name="Board name"
         label="Board"
         labelCol={{ span: 24 }}
         wrapperCol={{ span: 24 }}

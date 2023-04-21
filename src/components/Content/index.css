@@ -1,0 +1,7 @@
+.content {
+    height: 100vh;
+    padding: 0 14px;
+    .table {
+        width: calc(100vw - 260px);
+    }
+}

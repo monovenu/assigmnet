@@ -1,0 +1,38 @@
+.leftBar {
+    .menu {
+        width: 230px;
+        height: 100vh;
+        border-right:1px solid #aaa;
+        .menuItem {
+            cursor: pointer;
+            border-bottom:1px solid #aaa;
+            height: 40px;
+            line-height: 40px;
+            font-size: 15px;
+            font-weight: 700;
+            &::before {
+                content:'';
+                display: inline-block;
+                width: 5px;
+                height: 40px;
+                background: transparent;
+                vertical-align: top;
+            }
+            i {
+                display: inline-block;
+                margin: 0 5px 0 10px;
+                color: #555;
+                vertical-align: middle;
+            }
+            &:hover {
+                color: #3561F4;
+                &::before {
+                    background:#3561F4;
+                }
+                i {
+                    color: #3561F4;
+                }
+            }
+        }
+    }
+}

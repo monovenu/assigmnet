@@ -1,0 +1,67 @@
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 40px;
+
+    .title {
+        margin-top: 4px;
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+    .input-area {
+        display: flex;
+        align-items: flex-end;
+
+        .input-wrap {
+            position: relative;
+
+            .icon-a-ESMiconset_Search {
+                color: #bec3c7;
+                font-size: 24px;
+                left: 4px;
+                position: absolute;
+                top: 1px;
+            }
+
+            .input {
+                padding: 0 0 0 30px;
+                border: 1px solid #ccc;
+                border-radius: 2px;
+                width: 320px;
+                height: 26px;
+                line-height: 26px;
+
+                &::-webkit-input-placeholder {
+                    font-style: italic;
+                    color: #7c878e;
+                }
+            }
+        }
+
+        .createBtn-wrap {
+            position: relative;
+            .icon-a-ESMiconset_New {
+                color: #fff;
+                font-size: 20px;
+                position: absolute;
+                left: 8px;
+                top: 4px;
+            }
+            .createBtn {
+                padding: 0 0 0 24px;
+                color: #fff;
+                border: none;
+                margin-left: 6px;
+                background-color: #43b539;
+                height: 28px;
+                width: 104px;
+                border-radius: 2px;
+                font-size: 13px;
+            }
+        }
+
+    }
+}

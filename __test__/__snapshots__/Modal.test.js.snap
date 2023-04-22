@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal renders correctly 1`] = `
+<div
+  className="modal "
+>
+  <div
+    className="dialog"
+    style={
+      {
+        "width": "600px",
+      }
+    }
+  >
+    <header
+      className="dialog-header"
+    >
+      Create SDK
+      <i
+        className="iconfont icon-guanbi closeBtn"
+        onClick={[Function]}
+      />
+    </header>
+    <div
+      className="dialog-content"
+    >
+      <div
+        hide={[Function]}
+      >
+        test 
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,8 +1,7 @@
 import './index.css';
-import {MenuList} from '@/constants'
+import {MenuList} from '../../constants'
 
 const LeftBar = ({changeCurrentMenu}) => {
-
 
     return <div className='leftBar'>
         <ul className='menu'>
@@ -12,7 +11,6 @@ const LeftBar = ({changeCurrentMenu}) => {
                         <i className="iconfont icon-ICON2_API" />
                         {item}
                     </li>
-
                 })
             }
         </ul>

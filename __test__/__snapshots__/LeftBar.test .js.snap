@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LeftBar renders correctly 1`] = `
+<div
+  className="leftBar"
+>
+  <ul
+    className="menu"
+  >
+    <li
+      className="menuItem"
+      onClick={[Function]}
+    >
+      <i
+        className="iconfont icon-ICON2_API"
+      />
+      User profile
+    </li>
+    <li
+      className="menuItem"
+      onClick={[Function]}
+    >
+      <i
+        className="iconfont icon-ICON2_API"
+      />
+      SDK Management
+    </li>
+    <li
+      className="menuItem"
+      onClick={[Function]}
+    >
+      <i
+        className="iconfont icon-ICON2_API"
+      />
+      Dashboards
+    </li>
+    <li
+      className="menuItem"
+      onClick={[Function]}
+    >
+      <i
+        className="iconfont icon-ICON2_API"
+      />
+      Terms & Conditions
+    </li>
+  </ul>
+</div>
+`;

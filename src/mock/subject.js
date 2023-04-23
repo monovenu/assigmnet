@@ -22,7 +22,6 @@ const match = (item, sourceKey, key) => {
 export default {
   getList: config => {
     const { page = 1, limit = 20, key } = param2Obj(config.url)
-    console.log(key)
     const tempList = List.filter((item) => {
       if(match(item, 'Client name', key) || match(item, 'Board name', key) ||
       match(item, 'Tags', key) || match(item, 'Requestor', key)) {

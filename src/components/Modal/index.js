@@ -3,11 +3,10 @@ import './index.css';
 
 /**
  * 
- * @param
- *  close:关闭modal的方法
- *  width:弹窗宽度，默认600px
- *  title:弹窗标题
- *  children:modal的子节点，显示在modal的内容区域
+ * @param close:关闭modal的方法
+ * @param width:弹窗宽度，默认600px
+ * @param title:弹窗标题
+ * @param children:modal的子节点，显示在modal的内容区域
  * @returns 带显隐动画的弹窗
  */
 const Modal = ({

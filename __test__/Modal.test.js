@@ -11,7 +11,7 @@ it('Modal renders correctly', () => {
 });
 
 
-it('should has close Button', () => {
+it('Modal should has close Button', () => {
   const component = renderer.create(modal);
   const wrapper = component.root;
   expect(wrapper.findAll((node) => node.type === 'i' && node.props.className === 'iconfont icon-guanbi closeBtn')).toHaveLength(1);
